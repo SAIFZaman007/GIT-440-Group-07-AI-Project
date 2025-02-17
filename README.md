@@ -1,1 +1,3 @@
-# GIT-440-Group-07-AI-Project
+# Poker Simulator Using AI
+
+## Table of contents 
