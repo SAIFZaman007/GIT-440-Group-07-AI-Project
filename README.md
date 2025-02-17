@@ -4,10 +4,10 @@ A Poker(texas hold em) game simulator with Expectiminimax for strategic decision
 
 ## Table of contents 
 
--[Necessary components](#Necessary_components)
+[Necessary components](#Necessary_components)
 
--[Environment with codes](#Environment_with_codes)
+[Environment with codes](#Environment_with_codes)
 
--[Algorithm performance](#Algorithm_performance)
+[Algorithm performance](#Algorithm_performance)
 
--[Simulation](#Simulation)
+[Simulation](#Simulation)
