@@ -1,0 +1,5 @@
+Libraries :
+
+1. import random 一 The "random" module provides functions for generating pseudo-random numbers.
+
+2. from itertools import combinations 一 The itertools module is a collection of tools for creating iterators for efficient looping &  the combinations function generates all possible combinations of a given length from an input.
