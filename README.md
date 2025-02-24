@@ -1,6 +1,6 @@
 # Poker Simulator Using AI
 
-A Poker(texas hold em) game simulator with Expectiminimax for strategic decision-making in uncertain events.
+A Poker(texas hold'em) game simulator with Expectiminimax for strategic decision-making in uncertain events.
 
 ## Table of contents 
 
