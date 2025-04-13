@@ -1,6 +1,6 @@
 # Poker Simulator Using AI
 
-A non-observable and zero-sum Poker(texas hold'em) game simulator with Expectiminimax for strategic decision-making in uncertain events.
+A non-observable and zero-sum Poker (Texas Hold'em) game simulator with Expectiminimax algorithm for strategic decision-making in uncertain events.
 
 ## Table of contents 
 
