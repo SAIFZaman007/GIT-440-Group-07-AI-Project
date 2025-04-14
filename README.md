@@ -171,7 +171,7 @@ print("\n--- Showdown ---")
         exit()
 ```
 ### **Game-Play**
-![Image](https://github.com/user-attachments/assets/4a5dc505-2d33-4d57-b56d-8a8bb39dfb03)
+![Image](https://github.com/user-attachments/assets/2a3bfc4e-ba42-45b5-88eb-6d9d05cf7662)
 
 ## Conclusion
 
