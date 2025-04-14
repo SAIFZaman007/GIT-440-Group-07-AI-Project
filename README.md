@@ -172,6 +172,7 @@ print("\n--- Showdown ---")
 ```
 ### **Rounds in Game-Play**
 
+![Poker Image](D:\Downloads\STUDYmaterials\440\Texas Hold'em Poker/poker-game.png)
 ### 1. Pre-flop Betting Round
 
 ### 2. AI Actions Displayed
