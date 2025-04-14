@@ -14,9 +14,9 @@ A non-observable and zero-sum Poker (Texas Hold'em) game simulator with Expectim
     - [Card Dealing](#card-dealing)
     - [Hand Evaluation](#hand-evaluation)
     - [AI Decision-Making](#ai-decision-making)
-    - [Betting Mechanics](#betting-mechanics)
+    - [Betting Mechanism](#betting-mechanism)
     - [Showdown and Winner](#showdown-and-winner)
-- [Example Game-Play](#example-game-play)
+- [Game-Play](#game-play)
 
 ## Game Features
 
