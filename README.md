@@ -170,17 +170,8 @@ print("\n--- Showdown ---")
         print("Thank you for playing!")
         exit()
 ```
-### **Rounds in Game-Play**
+### **Game-Play**
 <img src="D:\Downloads\STUDYmaterials\440\Texas Hold'em Poker/poker-game.png" alt="Poker Image" width="300"/>
-
-![Poker Image](D:\Downloads\STUDYmaterials\440\Texas Hold'em Poker/poker-game.png)
-### 1. Pre-flop Betting Round
-
-### 2. AI Actions Displayed
-
-### 3. Showdown
-
-### 4. Replay Option
 
 ## Conclusion
 
