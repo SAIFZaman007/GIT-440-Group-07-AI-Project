@@ -172,7 +172,6 @@ print("\n--- Showdown ---")
 ```
 ### **Game-Play**
 ![Image](https://github.com/user-attachments/assets/4a5dc505-2d33-4d57-b56d-8a8bb39dfb03)
-![Alt Text](D:\Downloads\STUDYmaterials\440\Texas Hold'em Poker\poker-game.png)
 
 ## Conclusion
 
