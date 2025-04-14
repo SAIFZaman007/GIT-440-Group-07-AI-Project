@@ -60,32 +60,32 @@ Defines the suits and ranks of the deck, and sets up the possible hand rankings 
 ### **Deck Creation**
 The deck is created as a standard 52-card deck.
 
-   ``bash
+   ```bash
    def create_deck():
    return [(rank, suit) for suit in SUITS for rank in RANKS]
-
+```
 ### **Shuffling the Deck**
 The deck is shuffled using Python's `random.shuffle` method to randomize the card order before dealing.
 
-   ``python
+   ```python
    def shuffle_deck(deck):
    random.shuffle(deck)
-
+```
 ### **Card Dealing**
 Cards are dealt to players, ensuring each player receives two cards (hole cards). Community cards are later dealt in stages.
 
-   ``python
+   ```python
    def deal_cards(deck, num_players=6):
    hands = {f'Player {i+1}': [] for i in range(num_players)}  # Players 1 to 6
    for i in range(num_players):
    hands[f'Player {i+1}'].append(deck.pop())
    hands[f'Player {i+1}'].append(deck.pop())
    return hands, deck
-
+```
 ### **Hand Evaluation**
 The hand strength is determined using a series of helper functions that evaluate flushes and straights. The function `evaluate_hand()` returns the best possible hand from the player's cards and the community cards.
 
-   ``python
+   ```python
    def evaluate_hand(cards):
     values = [card[0] for card in cards]
     counts = Counter(values)
@@ -110,11 +110,11 @@ The hand strength is determined using a series of helper functions that evaluate
     if 2 in counts.values():
         return "One Pair"
     return "High Card"
-
+```
 ### **AI Decision-Making**
 The **Expectiminimax** algorithm is used to make decisions for the AI players. It simulates the AI’s potential decisions based on the current game state and evaluates the best course of action for each possible outcome.
 
-``python
+```python
 def expectiminimax_decision(hand, community_cards, deck, current_bet, pot, depth=2):
     def simulate_opponent_response(ai_strength, odds):
         if ai_strength > 6:
@@ -133,18 +133,44 @@ def evaluate_terminal(hand, community_cards):
             "Straight Flush": 9, "Royal Flush": 10
         }
         return values[strength]
-
+```
 ### **Betting Mechanism**
 The game includes a betting round function where players can choose to fold, call, raise, or check. The AI players make decisions based on their hand and current pot odds.
 
 ### **Showdown and Winner**
 After the betting rounds, the winner is determined based on the best hand from the player and community cards.
 
-``python
-def determine_winner(hands, community_cards):
-    # Logic to evaluate and compare hands to determine the winner.
+```python
+print("\n--- Showdown ---")
+    hand_values = {
+        "Royal Flush": 10, "Straight Flush": 9, "Four of a Kind": 8, "Full House": 7,
+        "Flush": 6, "Straight": 5, "Three of a Kind": 4, "Two Pair": 3, "One Pair": 2, "High Card": 1
+    }
+    print("Community Cards:", community_cards)
+    print("\nPlayer Hands and Evaluations:")
+    highest_strength = -1
+    winner = ""
+    best_hand = ""
 
-### **Example Game-Play**
+    for player, hand in hands.items():
+        full_hand = hand + community_cards
+        hand_strength = evaluate_hand(full_hand)
+        strength = hand_values[hand_strength]
+        print(f"{player}: {hand} -> {hand_strength}")
+        if strength > highest_strength:
+            highest_strength = strength
+            best_hand = hand_strength
+            winner = player
+
+    print(f"\nThe winner is {winner} with a {best_hand}!")
+    play_again = input("\nDo you want to play again? (yes/no): ").lower()
+    if play_again == "yes":
+        play_game()
+    else:
+        print("Thank you for playing!")
+        exit()
+```
+### **Rounds in Game-Play**
 
 ### 1. Pre-flop Betting Round
 
