@@ -33,3 +33,26 @@ A non-observable and zero-sum Poker (Texas Hold'em) game simulator with Expectim
 4. Run the script with the following command:
    ```bash
    python pokergame.py
+5. The game will start in the terminal, displaying your cards and the community cards. Follow the prompts to make your decisions.
+
+## Methodology
+
+The game leverages **Expectiminimax** decision-making for AI behavior, allowing AI players to consider not only their hand strength but also the likelihood of winning based on the remaining community cards and their current bet. This approach helps in making strategic decisions such as folding, betting, calling, and raising.
+
+## Game Flow
+
+1. **Dealing**: Each player receives 2 hole cards. The dealer also prepares 5 community cards which will be revealed in stages.
+
+2. **Betting Rounds**: Players (human and AI) take turns betting after the **pre-flop**, **flop**, **turn**, and **river**.
+
+3. **Showdown**: After the final betting round, the player with the best 5-card hand (using their hole cards and community cards) wins the pot.
+
+## Game Overview
+
+### **Card Setup**
+Defines the suits and ranks of the deck, and sets up the possible hand rankings in poker.
+
+```python
+SUITS = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+HAND_RANKS = ['High Card', 'One Pair', 'Two Pair', 'Three of a Kind', 'Straight', 'Flush', 'Full House', 'Four of a Kind', 'Straight Flush', 'Royal Flush']
