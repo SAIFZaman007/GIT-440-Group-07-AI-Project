@@ -81,3 +81,79 @@ Cards are dealt to players, ensuring each player receives two cards (hole cards)
    hands[f'Player {i+1}'].append(deck.pop())
    hands[f'Player {i+1}'].append(deck.pop())
    return hands, deck
+
+### **Hand Evaluation**
+The hand strength is determined using a series of helper functions that evaluate flushes and straights. The function `evaluate_hand()` returns the best possible hand from the player's cards and the community cards.
+
+   ``python
+   def evaluate_hand(cards):
+    values = [card[0] for card in cards]
+    counts = Counter(values)
+    flush = is_flush(cards)
+    straight = is_straight(cards)
+    if straight and flush:
+        if 'A' in values and 'K' in values:
+            return "Royal Flush"
+        return "Straight Flush"
+    if 4 in counts.values():
+        return "Four of a Kind"
+    if 3 in counts.values() and 2 in counts.values():
+        return "Full House"
+    if flush:
+        return "Flush"
+    if straight:
+        return "Straight"
+    if 3 in counts.values():
+        return "Three of a Kind"
+    if list(counts.values()).count(2) == 2:
+        return "Two Pair"
+    if 2 in counts.values():
+        return "One Pair"
+    return "High Card"
+
+### **AI Decision-Making**
+The **Expectiminimax** algorithm is used to make decisions for the AI players. It simulates the AI’s potential decisions based on the current game state and evaluates the best course of action for each possible outcome.
+
+``python
+def expectiminimax_decision(hand, community_cards, deck, current_bet, pot, depth=2):
+    def simulate_opponent_response(ai_strength, odds):
+        if ai_strength > 6:
+            return ['call', 'raise']
+        elif ai_strength > 3:
+            return ['call', 'fold']
+        else:
+            return ['fold', 'bluff'] if odds > 0.3 else ['call']
+
+def evaluate_terminal(hand, community_cards):
+        full_hand = hand + community_cards
+        strength = evaluate_hand(full_hand)
+        values = {
+            "High Card": 1, "One Pair": 2, "Two Pair": 3, "Three of a Kind": 4,
+            "Straight": 5, "Flush": 6, "Full House": 7, "Four of a Kind": 8,
+            "Straight Flush": 9, "Royal Flush": 10
+        }
+        return values[strength]
+
+### **Betting Mechanism**
+The game includes a betting round function where players can choose to fold, call, raise, or check. The AI players make decisions based on their hand and current pot odds.
+
+### **Showdown and Winner**
+After the betting rounds, the winner is determined based on the best hand from the player and community cards.
+
+``python
+def determine_winner(hands, community_cards):
+    # Logic to evaluate and compare hands to determine the winner.
+
+### **Example Game-Play**
+
+### 1. Pre-flop Betting Round
+
+### 2. AI Actions Displayed
+
+### 3. Showdown
+
+### 4. Replay Option
+
+## Conclusion
+
+This **Texas Hold'em Poker** game uses **AI** to simulate strategic decisions using the **Expectiminimax** algorithm. It is designed for **text-based interaction** and allows the player to experience poker against **AI opponents** who make realistic decisions based on the current game state.
