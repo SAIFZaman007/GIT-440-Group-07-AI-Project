@@ -171,7 +171,8 @@ print("\n--- Showdown ---")
         exit()
 ```
 ### **Game-Play**
-<img src="D:\Downloads\STUDYmaterials\440\Texas Hold'em Poker/poker-game.png" alt="Poker Image" width="300"/>
+<img src="D:\Downloads\STUDYmaterials\440\Texas Hold'em Poker\poker-game.png" alt="Poker Image" width="300"/>
+![Alt Text](D:\Downloads\STUDYmaterials\440\Texas Hold'em Poker\poker-game.png)
 
 ## Conclusion
 
