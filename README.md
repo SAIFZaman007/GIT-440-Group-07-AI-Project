@@ -57,30 +57,7 @@ SUITS = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
 RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 HAND_RANKS = ['High Card', 'One Pair', 'Two Pair', 'Three of a Kind', 'Straight', 'Flush', 'Full House', 'Four of a Kind', 'Straight Flush', 'Royal Flush']
 
-## Deck Creation
-The deck is created as a standard 52-card deck.
 
-```python
-def create_deck():
-    return [(rank, suit) for suit in SUITS for rank in RANKS]
-
-## Shuffling the Deck
-The deck is shuffled using Python's `random.shuffle` method to randomize the card order before dealing.
-
-```python
-def shuffle_deck(deck):
-    random.shuffle(deck)
-
-## Card Dealing
-Cards are dealt to players, ensuring each player receives two cards (hole cards). Community cards are later dealt in stages.
-
-```python
-def deal_cards(deck, num_players=6):
-    hands = {f'Player {i+1}': [] for i in range(num_players)}  # Players 1 to 6
-    for i in range(num_players):
-        hands[f'Player {i+1}'].append(deck.pop())
-        hands[f'Player {i+1}'].append(deck.pop())
-    return hands, deck
 
 
 
