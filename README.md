@@ -52,11 +52,11 @@ The game leverages **Expectiminimax** decision-making for AI behavior, allowing 
 ### **Card Setup**
 Defines the suits and ranks of the deck, and sets up the possible hand rankings in poker.
 
-   ``bash
+   ```bash
    SUITS = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
    RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
    HAND_RANKS = 'High Card', 'One Pair', 'Two Pair', 'Three of a Kind', 'Straight', 'Flush', 'Full House', 'Four of a Kind', 'Straight Flush', 'Royal Flush'
-
+```
 ### **Deck Creation**
 The deck is created as a standard 52-card deck.
 
