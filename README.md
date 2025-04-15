@@ -137,6 +137,33 @@ def evaluate_terminal(hand, community_cards):
 ### **Betting Mechanism**
 The game includes a betting round function where players can choose to fold, call, raise, or check. The AI players make decisions based on their hand and current pot odds.
 
+```python
+def betting_round(hands, pot, deck, community_cards, round_name="Betting", min_bet=10):
+    print(f"\n--- {round_name.upper()} ROUND ---")
+    active_players = {player: {'hand': hand, 'status': 'active', 'bet': 0} for player, hand in hands.items()}
+    player_order = list(active_players.keys())
+    current_bet = 0
+    index = 0
+    players_in_round = len(player_order)
+
+    while True:
+        player = player_order[index]
+        player_data = active_players[player]
+
+        if player_data['status'] != 'active':
+            index = (index + 1) % players_in_round
+            continue
+
+        print(f"\n{player}'s turn. Current bet to call: {current_bet}")
+
+        if player == 'Player 1':
+            print(f"Your hand: {player_data['hand']}")
+        else:
+            print(f"{player} is thinking...")
+
+        print(f"Pot: {pot}, Your bet so far: {player_data['bet']}")
+```
+
 ### **Showdown and Winner**
 After the betting rounds, the winner is determined based on the best hand from the player and community cards.
 
